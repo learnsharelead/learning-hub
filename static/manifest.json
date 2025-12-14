@@ -1,0 +1,37 @@
+{
+    "name": "Learning Command Hub",
+    "short_name": "LearnHub",
+    "description": "Your Personal Self-Development Dashboard - Access all learning academies",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#7c3aed",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "icons": [
+        {
+            "src": "https://raw.githubusercontent.com/learnsharelead/learning-hub/main/static/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "https://raw.githubusercontent.com/learnsharelead/learning-hub/main/static/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": [
+        "education",
+        "productivity"
+    ],
+    "screenshots": [
+        {
+            "src": "https://raw.githubusercontent.com/learnsharelead/learning-hub/main/static/screenshot-1.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "form_factor": "wide"
+        }
+    ]
+}

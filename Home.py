@@ -9,6 +9,21 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
+# PWA Meta Tags for Mobile App Support
+st.markdown("""
+<!-- PWA Meta Tags -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="LearnHub">
+<meta name="application-name" content="Learning Command Hub">
+<meta name="theme-color" content="#7c3aed">
+<meta name="msapplication-TileColor" content="#7c3aed">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+<link rel="manifest" href="https://raw.githubusercontent.com/learnsharelead/learning-hub/main/static/manifest.json">
+<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/learnsharelead/learning-hub/main/static/icon-192.png">
+""", unsafe_allow_html=True)
+
 # Premium Light Theme CSS
 st.markdown("""
 <style>
