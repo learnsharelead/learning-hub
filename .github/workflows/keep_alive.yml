@@ -1,10 +1,10 @@
-name: Keep All Apps Alive
+name: Keep All Apps Awake
 
 on:
   schedule:
-    # Runs every 4 hours to ensure no app ever sleeps
-    - cron: '0 */4 * * *'
-  workflow_dispatch: # Allows you to manually wake them all up from GitHub Actions tab
+    # Runs every 2 hours for maximum reliability
+    - cron: '0 */2 * * *'
+  workflow_dispatch: 
 
 jobs:
   ping:
@@ -12,22 +12,22 @@ jobs:
     steps:
       - name: Wake up all Academies
         run: |
-          echo "Waking up Learning Hub..."
-          curl -sL -f https://learning-command-hub.streamlit.app > /dev/null
+          echo "Waking up Main Hub..."
+          curl -sL -f https://learnsharelead.streamlit.app/ > /dev/null
           
           echo "Waking up Python Mastery..."
-          curl -sL -f https://python-mastery.streamlit.app > /dev/null
-          
-          echo "Waking up Performance Testing..."
-          curl -sL -f https://performance-testing-academy.streamlit.app > /dev/null
+          curl -sL -f https://python-mastery.streamlit.app/ > /dev/null
           
           echo "Waking up Automation Testing..."
-          curl -sL -f https://automation-testing-academy.streamlit.app > /dev/null
+          curl -sL -f https://automation-testing-academy.streamlit.app/ > /dev/null
+          
+          echo "Waking up Performance Testing..."
+          curl -sL -f https://performance-testing-academy.streamlit.app/ > /dev/null
           
           echo "Waking up Learn AI..."
-          curl -sL -f https://learn-ai.streamlit.app > /dev/null
+          curl -sL -f https://learn-ai.streamlit.app/ > /dev/null
           
           echo "Waking up Coach Sushma..."
-          curl -sL -f https://coach-sushma.streamlit.app > /dev/null
+          curl -sL -f https://coach-sushma.streamlit.app/ > /dev/null
           
-          echo "All apps poked! They should now stay awake."
+          echo "Pokes complete. Apps are staying awake!"
