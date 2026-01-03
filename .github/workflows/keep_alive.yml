@@ -1,0 +1,30 @@
+name: Keep App Alive
+
+on:
+  schedule:
+    # Runs every 6 hours (00:00, 06:00, 12:00, 18:00 UTC)
+    - cron: '0 */6 * * *'
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Learning Hub and Academies
+        run: |
+          echo "Pinging main hub..."
+          curl -I https://learning-command-hub.streamlit.app
+          
+          echo "Pinging Python Mastery..."
+          curl -I https://python-mastery.streamlit.app
+          
+          echo "Pinging Performance Testing..."
+          curl -I https://performance-testing.streamlit.app
+          
+          echo "Pinging Automation Testing..."
+          curl -I https://automation-testing-academy.streamlit.app
+          
+          echo "Pinging AI Academy..."
+          curl -I https://learn-artificial-intelligence.streamlit.app
+          
+          echo "Done! Apps poked to stay awake."
