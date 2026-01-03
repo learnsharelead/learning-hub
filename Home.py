@@ -9,9 +9,28 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# PWA Meta Tags for Mobile App Support
+# SEO and Social Media Meta Tags
 st.markdown("""
-<!-- PWA Meta Tags -->
+<!-- Primary Meta Tags -->
+<title>Learning Command Hub | Master Your Craft</title>
+<meta name="title" content="Learning Command Hub | Master Your Craft">
+<meta name="description" content="One portal to rule them all. Access all your learning academies: Python, Automation, Performance, and AI.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://learning-command-hub.streamlit.app/">
+<meta property="og:title" content="Learning Command Hub | Master Your Craft">
+<meta property="og:description" content="One portal to rule them all. Access all your learning academies: Python, Automation, Performance, and AI.">
+<meta property="og:image" content="https://raw.githubusercontent.com/learnsharelead/learning-hub/main/static/screenshot-1.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://learning-command-hub.streamlit.app/">
+<meta property="twitter:title" content="Learning Command Hub | Master Your Craft">
+<meta property="twitter:description" content="One portal to rule them all. Access all your learning academies: Python, Automation, Performance, and AI.">
+<meta property="twitter:image" content="https://raw.githubusercontent.com/learnsharelead/learning-hub/main/static/screenshot-1.png">
+
+<!-- PWA and Mobile Tags -->
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
