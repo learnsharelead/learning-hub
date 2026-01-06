@@ -479,6 +479,54 @@ with col1:
     </div>
     """, unsafe_allow_html=True)
 
+    st.markdown("""
+    <div class="academy-card">
+        <div class="card-accent accent-green"></div>
+        <div class="card-header">
+            <div class="card-icon icon-green">💰</div>
+            <div class="card-title-area">
+                <div class="card-category cat-green">Finance</div>
+                <div class="card-title">AI Finance</div>
+            </div>
+        </div>
+        <p class="card-desc">Advanced financial analysis powered by AI. Track markets, analyze trends, and get intelligent investment insights.</p>
+        <div class="card-tags">
+            <span class="tag">Stock Analysis</span>
+            <span class="tag">Market Trends</span>
+            <span class="tag">AI Insights</span>
+            <span class="tag">Trading</span>
+        </div>
+        <div class="card-footer">
+            <div class="card-stats">📚 Tools & Analytics</div>
+            <a href="https://ai-finance.streamlit.app" target="_blank" class="card-btn btn-green">Launch →</a>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("""
+    <div class="academy-card">
+        <div class="card-accent accent-purple"></div>
+        <div class="card-header">
+            <div class="card-icon icon-purple">👩‍🏫</div>
+            <div class="card-title-area">
+                <div class="card-category cat-purple">Mentorship</div>
+                <div class="card-title">Coach Sushma</div>
+            </div>
+        </div>
+        <p class="card-desc">Your personal AI career coach. Get guidance on resume building, interview preparation, and career growth strategies.</p>
+        <div class="card-tags">
+            <span class="tag">Career Coaching</span>
+            <span class="tag">Interview Prep</span>
+            <span class="tag">Resume Review</span>
+            <span class="tag">Growth</span>
+        </div>
+        <div class="card-footer">
+            <div class="card-stats">💬 24/7 Mentoring</div>
+            <a href="https://coach-sushma.streamlit.app" target="_blank" class="card-btn btn-purple">Launch →</a>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
 with col2:
     st.markdown("""
     <div class="academy-card">
@@ -524,6 +572,54 @@ with col2:
         <div class="card-footer">
             <div class="card-stats">📚 50+ Lessons • ⏱️ 45 Hours</div>
             <a href="https://learn-artificial-intelligence.streamlit.app" target="_blank" class="card-btn btn-amber">Launch →</a>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("""
+    <div class="academy-card">
+        <div class="card-accent accent-amber"></div>
+        <div class="card-header">
+            <div class="card-icon icon-amber">🔍</div>
+            <div class="card-title-area">
+                <div class="card-category cat-amber">Resources</div>
+                <div class="card-title">AI Model Hunter</div>
+            </div>
+        </div>
+        <p class="card-desc">Discover and evaluate the best AI models. Search, compare, and find the perfect models for your specific use cases.</p>
+        <div class="card-tags">
+            <span class="tag">Model Search</span>
+            <span class="tag">HuggingFace</span>
+            <span class="tag">Benchmarks</span>
+            <span class="tag">Discovery</span>
+        </div>
+        <div class="card-footer">
+            <div class="card-stats">🎯 Model Discovery</div>
+            <a href="https://ai-model-hunter.streamlit.app" target="_blank" class="card-btn btn-amber">Launch →</a>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("""
+    <div class="academy-card">
+        <div class="card-accent accent-blue"></div>
+        <div class="card-header">
+            <div class="card-icon icon-blue">🌐</div>
+            <div class="card-title-area">
+                <div class="card-category cat-blue">Tools</div>
+                <div class="card-title">Website AI Agent</div>
+            </div>
+        </div>
+        <p class="card-desc">Intelligent web agent for content extraction and analysis. Scrape, summarize, and interact with web content using AI.</p>
+        <div class="card-tags">
+            <span class="tag">Web Scraping</span>
+            <span class="tag">Content Analysis</span>
+            <span class="tag">Automation</span>
+            <span class="tag">Agent</span>
+        </div>
+        <div class="card-footer">
+            <div class="card-stats">🤖 Web Intelligence</div>
+            <a href="https://website-ai-agent.streamlit.app" target="_blank" class="card-btn btn-blue">Launch →</a>
         </div>
     </div>
     """, unsafe_allow_html=True)

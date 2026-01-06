@@ -21,13 +21,23 @@ jobs:
           echo "Waking up Automation Testing..."
           curl -sL -f https://automation-testing-academy.streamlit.app/ > /dev/null
           
-          echo "Waking up Performance Testing..."
-          curl -sL -f https://performance-testing-academy.streamlit.app/ > /dev/null
-          
+
           echo "Waking up Learn AI..."
           curl -sL -f https://learn-ai.streamlit.app/ > /dev/null
           
           echo "Waking up Coach Sushma..."
           curl -sL -f https://coach-sushma.streamlit.app/ > /dev/null
+
+          echo "Waking up Performance Testing..."
+          curl -sL -f https://performance-testing.streamlit.app/ > /dev/null
+
+          echo "Waking up AI Finance..."
+          curl -sL -f https://ai-finance.streamlit.app/ > /dev/null
+
+          echo "Waking up AI Model Hunter..."
+          curl -sL -f https://ai-model-hunter.streamlit.app/ > /dev/null
+
+          echo "Waking up Website AI Agent..."
+          curl -sL -f https://website-ai-agent.streamlit.app/ > /dev/null
           
           echo "Pokes complete. Apps are staying awake!"
