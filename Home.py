@@ -43,634 +43,301 @@ st.markdown("""
 <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/learnsharelead/learning-hub/main/static/icon-192.png">
 """, unsafe_allow_html=True)
 
-# Premium Light Theme CSS
+# Premium Compact Theme CSS
 st.markdown("""
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
-    
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
     
     html, body, [class*="css"] {
-        font-family: 'Outfit', -apple-system, sans-serif !important;
-        -webkit-font-smoothing: antialiased;
+        font-family: 'Outfit', sans-serif !important;
     }
     
-    #MainMenu, footer, header, [data-testid="stSidebar"], 
-    [data-testid="collapsedControl"], .stDeployButton { display: none !important; }
+    #MainMenu, footer, header, [data-testid="stSidebar"], [data-testid="collapsedControl"] { display: none !important; }
     
     .stApp {
-        background: linear-gradient(180deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%) !important;
+        background: #f8fafc !important;
     }
     
     .block-container {
-        padding: 1rem 2rem 3rem 2rem !important;
-        max-width: 1400px !important;
+        padding: 1.5rem 2rem !important;
+        max-width: 100% !important;
     }
     
-    @keyframes gradient-shift {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
-    
-    /* Hero */
-    .hero {
-        text-align: center;
-        padding: 50px 20px 40px;
-    }
-    
-    .hero-badge {
-        display: inline-block;
-        background: linear-gradient(135deg, #ede9fe, #dbeafe);
-        border: 1px solid #c4b5fd;
-        padding: 8px 20px;
-        border-radius: 50px;
-        font-size: 0.85rem;
-        color: #7c3aed;
-        font-weight: 600;
+    /* Compact Hero */
+    .hero-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         margin-bottom: 25px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #e2e8f0;
     }
     
     .hero-title {
-        font-family: 'Outfit', sans-serif;
-        font-size: clamp(2.5rem, 6vw, 4.5rem);
-        font-weight: 900;
-        line-height: 1.1;
-        margin-bottom: 20px;
-        letter-spacing: -2px;
-        background: linear-gradient(135deg, #1e293b 0%, #7c3aed 30%, #3b82f6 60%, #10b981 100%);
-        background-size: 300% 300%;
-        animation: gradient-shift 8s ease infinite;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.15rem;
-        color: #64748b;
-        max-width: 650px;
-        margin: 0 auto 35px;
-        line-height: 1.7;
-    }
-    
-    /* Stats */
-    .stats-bar {
-        display: flex;
-        justify-content: center;
-        gap: 50px;
-        margin: 40px 0;
-        flex-wrap: wrap;
-        background: #ffffff;
-        padding: 30px 50px;
-        border-radius: 20px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-        border: 1px solid #e2e8f0;
-    }
-    
-    .stat-item { text-align: center; }
-    
-    .stat-number {
-        font-family: 'Space Grotesk', monospace;
-        font-size: 2.8rem;
-        font-weight: 700;
+        font-size: 2rem;
+        font-weight: 800;
         background: linear-gradient(135deg, #7c3aed, #3b82f6);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        margin: 0;
     }
     
-    .stat-label {
-        font-size: 0.85rem;
+    .hero-subtitle {
         color: #64748b;
-        margin-top: 5px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-weight: 500;
+        font-size: 0.9rem;
+        margin: 0;
     }
     
-    /* Section Headers */
-    .section-header {
-        margin: 50px 0 25px;
-    }
-    
-    .section-label {
-        font-size: 0.8rem;
-        color: #7c3aed;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        font-weight: 600;
-        margin-bottom: 8px;
-    }
-    
-    .section-title {
-        font-size: 2rem;
-        font-weight: 800;
-        color: #1e293b;
-    }
-    
-    /* Academy Cards */
+    /* Compact Card */
     .academy-card {
         background: #ffffff;
         border: 1px solid #e2e8f0;
-        border-radius: 24px;
-        padding: 30px;
-        margin-bottom: 20px;
-        transition: all 0.4s ease;
+        border-radius: 12px;
+        padding: 15px;
+        height: 100%;
+        transition: all 0.2s ease;
         position: relative;
         overflow: hidden;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.04);
     }
     
     .academy-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        border-color: transparent;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        border-color: #cbd5e1;
     }
     
-    .card-accent {
-        position: absolute;
-        top: 0; left: 0; right: 0;
-        height: 4px;
-    }
-    
-    .accent-blue { background: linear-gradient(90deg, #3b82f6, #60a5fa); }
-    .accent-purple { background: linear-gradient(90deg, #8b5cf6, #a78bfa); }
-    .accent-green { background: linear-gradient(90deg, #10b981, #34d399); }
-    .accent-amber { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
-    
-    .card-header {
+    .card-top {
         display: flex;
         align-items: center;
-        gap: 15px;
-        margin-bottom: 15px;
+        gap: 10px;
+        margin-bottom: 10px;
     }
     
     .card-icon {
-        width: 60px;
-        height: 60px;
-        border-radius: 16px;
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.8rem;
+        font-size: 1.2rem;
     }
     
-    .icon-blue { background: #eff6ff; border: 1px solid #bfdbfe; }
-    .icon-purple { background: #f5f3ff; border: 1px solid #ddd6fe; }
-    .icon-green { background: #ecfdf5; border: 1px solid #a7f3d0; }
-    .icon-amber { background: #fffbeb; border: 1px solid #fde68a; }
-    
-    .card-title-area { flex: 1; }
-    
-    .card-category {
-        font-size: 0.7rem;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-weight: 600;
-        margin-bottom: 4px;
-    }
-    
-    .cat-blue { color: #3b82f6; }
-    .cat-purple { color: #8b5cf6; }
-    .cat-green { color: #10b981; }
-    .cat-amber { color: #f59e0b; }
+    .icon-blue { background: #eff6ff; color: #3b82f6; }
+    .icon-green { background: #ecfdf5; color: #10b981; }
+    .icon-purple { background: #f5f3ff; color: #8b5cf6; }
+    .icon-amber { background: #fffbeb; color: #f59e0b; }
     
     .card-title {
-        font-size: 1.4rem;
+        font-size: 1rem;
         font-weight: 700;
         color: #1e293b;
+        line-height: 1.2;
     }
     
     .card-desc {
-        font-size: 0.95rem;
+        font-size: 0.8rem;
         color: #64748b;
-        line-height: 1.7;
-        margin-bottom: 20px;
-    }
-    
-    .card-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-bottom: 20px;
-    }
-    
-    .tag {
-        padding: 5px 12px;
-        border-radius: 8px;
-        font-size: 0.75rem;
-        font-weight: 500;
-        background: #f1f5f9;
-        color: #475569;
-        border: 1px solid #e2e8f0;
+        line-height: 1.4;
+        margin-bottom: 12px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        height: 36px; /* Fixed height for consistency */
     }
     
     .card-footer {
         display: flex;
-        align-items: center;
         justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 15px;
+        align-items: center;
+        margin-top: auto;
     }
     
-    .card-stats {
-        display: flex;
-        gap: 20px;
-        font-size: 0.85rem;
-        color: #64748b;
+    .tag {
+        font-size: 0.7rem;
+        color: #94a3b8;
+        background: #f1f5f9;
+        padding: 2px 8px;
+        border-radius: 4px;
     }
     
-    .card-btn {
-        display: inline-block;
-        padding: 12px 24px;
-        border-radius: 12px;
+    .launch-link {
+        font-size: 0.8rem;
         font-weight: 600;
-        font-size: 0.9rem;
+        color: #7c3aed !important;
         text-decoration: none !important;
-        color: white !important;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        padding: 4px 10px;
+        border-radius: 6px;
+        background: #f5f3ff;
+        transition: all 0.2s;
     }
     
-    .btn-blue { background: linear-gradient(135deg, #3b82f6, #2563eb); }
-    .btn-purple { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
-    .btn-green { background: linear-gradient(135deg, #10b981, #059669); }
-    .btn-amber { background: linear-gradient(135deg, #f59e0b, #d97706); }
+    .launch-link:hover {
+        background: #7c3aed;
+        color: white !important;
+    }
     
-    .card-btn:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
-    
-    /* Quick Access */
-    .quick-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 15px;
+    .footer-compact {
+        text-align: center;
+        font-size: 0.75rem;
+        color: #94a3b8;
         margin-top: 25px;
-    }
-    
-    .quick-card {
-        background: #ffffff;
-        border: 1px solid #e2e8f0;
-        border-radius: 16px;
-        padding: 25px 15px;
-        text-align: center;
-        text-decoration: none !important;
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-    }
-    
-    .quick-card:hover {
-        background: #f8fafc;
-        transform: translateY(-3px);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        border-color: #c4b5fd;
-    }
-    
-    .quick-icon { font-size: 2rem; margin-bottom: 10px; display: block; }
-    .quick-title { color: #1e293b; font-weight: 600; font-size: 0.95rem; }
-    .quick-sub { color: #64748b; font-size: 0.75rem; margin-top: 3px; }
-    
-    /* CTA Box */
-    .cta-box {
-        margin: 60px 0;
-        padding: 50px 40px;
-        background: linear-gradient(135deg, #ede9fe 0%, #dbeafe 100%);
-        border: 1px solid #c4b5fd;
-        border-radius: 28px;
-        text-align: center;
-    }
-    
-    .cta-title {
-        font-size: 1.8rem;
-        font-weight: 800;
-        color: #1e293b;
-        margin-bottom: 12px;
-    }
-    
-    .cta-text {
-        color: #64748b;
-        font-size: 1rem;
-        margin-bottom: 25px;
-    }
-    
-    .cta-btn {
-        display: inline-block;
-        padding: 14px 30px;
-        background: linear-gradient(135deg, #7c3aed, #6366f1);
-        border-radius: 14px;
-        color: white !important;
-        text-decoration: none !important;
-        font-weight: 600;
-        box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
-        transition: all 0.3s ease;
-    }
-    
-    .cta-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 12px 35px rgba(124, 58, 237, 0.4);
-    }
-    
-    /* Footer */
-    .footer {
-        text-align: center;
-        padding: 40px 20px;
         border-top: 1px solid #e2e8f0;
-        margin-top: 40px;
-        background: #ffffff;
-    }
-    
-    .footer-brand {
-        font-size: 1.3rem;
-        font-weight: 700;
-        background: linear-gradient(135deg, #7c3aed, #3b82f6);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 10px;
-    }
-    
-    .footer-text { color: #64748b; font-size: 0.9rem; }
-    .footer-link { color: #7c3aed; text-decoration: none; font-weight: 500; }
-    
-    @media (max-width: 768px) {
-        .quick-grid { grid-template-columns: repeat(2, 1fr); }
-        .stats-bar { gap: 25px; padding: 25px; }
+        padding-top: 15px;
     }
 </style>
 """, unsafe_allow_html=True)
 
-# Hero Section
+# Compact Header
 st.markdown("""
-<div class="hero">
-    <div class="hero-badge">✨ Your Learning Universe</div>
-    <h1 class="hero-title">Master Your Craft</h1>
-    <p class="hero-subtitle">
-        One portal to rule them all. Access all your learning academies and accelerate your journey from beginner to expert.
-    </p>
+<div class="hero-container">
+    <div>
+        <h1 class="hero-title">Learning Command Hub</h1>
+        <p class="hero-subtitle">Master Your Craft • Access all academies from one central dashboard</p>
+    </div>
+    <div style="text-align: right; font-size: 0.8rem; color: #64748b;">
+        <div><b>8</b> Powered Apps</div>
+        <div><b>24/7</b> Availability</div>
+    </div>
 </div>
 """, unsafe_allow_html=True)
 
-# Stats
-st.markdown("""
-<div class="stats-bar">
-    <div class="stat-item"><div class="stat-number">4+</div><div class="stat-label">Academies</div></div>
-    <div class="stat-item"><div class="stat-number">150+</div><div class="stat-label">Lessons</div></div>
-    <div class="stat-item"><div class="stat-number">50+</div><div class="stat-label">Projects</div></div>
-    <div class="stat-item"><div class="stat-number">∞</div><div class="stat-label">Potential</div></div>
-</div>
-""", unsafe_allow_html=True)
+# Grid Layout: 4 Columns
+col1, col2, col3, col4 = st.columns(4)
 
-# Section Header
-st.markdown("""
-<div class="section-header">
-    <div class="section-label">Explore & Learn</div>
-    <div class="section-title">Learning Academies</div>
-</div>
-""", unsafe_allow_html=True)
-
-# Academy Cards
-col1, col2 = st.columns(2, gap="medium")
-
+# Column 1
 with col1:
     st.markdown("""
     <div class="academy-card">
-        <div class="card-accent accent-blue"></div>
-        <div class="card-header">
+        <div class="card-top">
             <div class="card-icon icon-blue">🐍</div>
-            <div class="card-title-area">
-                <div class="card-category cat-blue">Programming</div>
-                <div class="card-title">Python Mastery</div>
-            </div>
+            <div class="card-title">Python Mastery</div>
         </div>
-        <p class="card-desc">From "Hello World" to Neural Networks. Master Python fundamentals, OOP, advanced concepts, and build production AI systems with PyTorch & NumPy.</p>
-        <div class="card-tags">
-            <span class="tag">Python 3.12+</span>
+        <p class="card-desc">Master Python fundamentals to advanced AI systems with PyTorch.</p>
+        <div class="card-footer">
             <span class="tag">AI/ML</span>
-            <span class="tag">PyTorch</span>
-            <span class="tag">NumPy</span>
-        </div>
-        <div class="card-footer">
-            <div class="card-stats">📚 40+ Lessons • ⏱️ 40 Hours</div>
-            <a href="https://python-mastery.streamlit.app" target="_blank" class="card-btn btn-blue">Launch →</a>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    st.markdown("""
-    <div class="academy-card">
-        <div class="card-accent accent-green"></div>
-        <div class="card-header">
-            <div class="card-icon icon-green">🤖</div>
-            <div class="card-title-area">
-                <div class="card-category cat-green">Automation</div>
-                <div class="card-title">Automation Testing Academy</div>
-            </div>
-        </div>
-        <p class="card-desc">Master modern test automation frameworks used by top tech companies. Build robust, maintainable test suites that catch bugs before production.</p>
-        <div class="card-tags">
-            <span class="tag">Playwright</span>
-            <span class="tag">WebdriverIO</span>
-            <span class="tag">Karate</span>
-            <span class="tag">CI/CD</span>
-        </div>
-        <div class="card-footer">
-            <div class="card-stats">📚 45+ Lessons • ⏱️ 35 Hours</div>
-            <a href="https://automation-testing-academy.streamlit.app" target="_blank" class="card-btn btn-green">Launch →</a>
+            <a href="https://python-mastery.streamlit.app" target="_blank" class="launch-link">Launch ↗</a>
         </div>
     </div>
     """, unsafe_allow_html=True)
 
+    st.markdown("<div style='height: 15px'></div>", unsafe_allow_html=True)
+
     st.markdown("""
     <div class="academy-card">
-        <div class="card-accent accent-green"></div>
-        <div class="card-header">
-            <div class="card-icon icon-green">💰</div>
-            <div class="card-title-area">
-                <div class="card-category cat-green">Finance</div>
-                <div class="card-title">AI Finance</div>
-            </div>
+        <div class="card-top">
+            <div class="card-icon icon-purple">⚡</div>
+            <div class="card-title">Performance Testing</div>
         </div>
-        <p class="card-desc">Advanced financial analysis powered by AI. Track markets, analyze trends, and get intelligent investment insights.</p>
-        <div class="card-tags">
-            <span class="tag">Stock Analysis</span>
-            <span class="tag">Market Trends</span>
-            <span class="tag">AI Insights</span>
-            <span class="tag">Trading</span>
-        </div>
+        <p class="card-desc">Optimize systems with JMeter, k6, and Gatling at expert level.</p>
         <div class="card-footer">
-            <div class="card-stats">📚 Tools & Analytics</div>
-            <a href="https://ai-finance.streamlit.app" target="_blank" class="card-btn btn-green">Launch →</a>
+            <span class="tag">Testing</span>
+            <a href="https://performance-testing.streamlit.app" target="_blank" class="launch-link">Launch ↗</a>
         </div>
     </div>
     """, unsafe_allow_html=True)
 
-    st.markdown("""
-    <div class="academy-card">
-        <div class="card-accent accent-purple"></div>
-        <div class="card-header">
-            <div class="card-icon icon-purple">👩‍🏫</div>
-            <div class="card-title-area">
-                <div class="card-category cat-purple">Mentorship</div>
-                <div class="card-title">Coach Sushma</div>
-            </div>
-        </div>
-        <p class="card-desc">Your personal AI career coach. Get guidance on resume building, interview preparation, and career growth strategies.</p>
-        <div class="card-tags">
-            <span class="tag">Career Coaching</span>
-            <span class="tag">Interview Prep</span>
-            <span class="tag">Resume Review</span>
-            <span class="tag">Growth</span>
-        </div>
-        <div class="card-footer">
-            <div class="card-stats">💬 24/7 Mentoring</div>
-            <a href="https://coach-sushma.streamlit.app" target="_blank" class="card-btn btn-purple">Launch →</a>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-
+# Column 2
 with col2:
     st.markdown("""
     <div class="academy-card">
-        <div class="card-accent accent-purple"></div>
-        <div class="card-header">
-            <div class="card-icon icon-purple">⚡</div>
-            <div class="card-title-area">
-                <div class="card-category cat-purple">Testing</div>
-                <div class="card-title">Performance Testing Academy</div>
-            </div>
+        <div class="card-top">
+            <div class="card-icon icon-green">🤖</div>
+            <div class="card-title">Automation Academy</div>
         </div>
-        <p class="card-desc">Expert-level performance testing with industry tools. Learn to identify bottlenecks, optimize systems, and ensure applications scale under load.</p>
-        <div class="card-tags">
-            <span class="tag">JMeter</span>
-            <span class="tag">k6</span>
-            <span class="tag">Gatling</span>
-            <span class="tag">Locust</span>
-        </div>
+        <p class="card-desc">Build robust test suites with Playwright and WebdriverIO.</p>
         <div class="card-footer">
-            <div class="card-stats">📚 35+ Lessons • ⏱️ 30 Hours</div>
-            <a href="https://performance-testing.streamlit.app" target="_blank" class="card-btn btn-purple">Launch →</a>
+            <span class="tag">Automation</span>
+            <a href="https://automation-testing-academy.streamlit.app" target="_blank" class="launch-link">Launch ↗</a>
         </div>
     </div>
     """, unsafe_allow_html=True)
     
+    st.markdown("<div style='height: 15px'></div>", unsafe_allow_html=True)
+
     st.markdown("""
     <div class="academy-card">
-        <div class="card-accent accent-amber"></div>
-        <div class="card-header">
+        <div class="card-top">
             <div class="card-icon icon-amber">🧠</div>
-            <div class="card-title-area">
-                <div class="card-category cat-amber">AI & Machine Learning</div>
-                <div class="card-title">Learn Artificial Intelligence</div>
-            </div>
+            <div class="card-title">Learn AI & ML</div>
         </div>
-        <p class="card-desc">Master AI fundamentals, neural networks, and machine learning. From basics to building production-ready AI systems with hands-on projects.</p>
-        <div class="card-tags">
-            <span class="tag">AI/ML</span>
-            <span class="tag">Neural Networks</span>
+        <p class="card-desc">From basics to production-ready AI systems and Neural Networks.</p>
+        <div class="card-footer">
             <span class="tag">Deep Learning</span>
-            <span class="tag">LLMs</span>
-        </div>
-        <div class="card-footer">
-            <div class="card-stats">📚 50+ Lessons • ⏱️ 45 Hours</div>
-            <a href="https://learn-artificial-intelligence.streamlit.app" target="_blank" class="card-btn btn-amber">Launch →</a>
+            <a href="https://learn-artificial-intelligence.streamlit.app" target="_blank" class="launch-link">Launch ↗</a>
         </div>
     </div>
     """, unsafe_allow_html=True)
 
+# Column 3
+with col3:
     st.markdown("""
     <div class="academy-card">
-        <div class="card-accent accent-amber"></div>
-        <div class="card-header">
+        <div class="card-top">
+            <div class="card-icon icon-green">💰</div>
+            <div class="card-title">AI Finance</div>
+        </div>
+        <p class="card-desc">Smart market analysis and investment insights powered by AI.</p>
+        <div class="card-footer">
+            <span class="tag">Finance</span>
+            <a href="https://ai-finance.streamlit.app" target="_blank" class="launch-link">Launch ↗</a>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("<div style='height: 15px'></div>", unsafe_allow_html=True)
+
+    st.markdown("""
+    <div class="academy-card">
+        <div class="card-top">
             <div class="card-icon icon-amber">🔍</div>
-            <div class="card-title-area">
-                <div class="card-category cat-amber">Resources</div>
-                <div class="card-title">AI Model Hunter</div>
-            </div>
+            <div class="card-title">AI Model Hunter</div>
         </div>
-        <p class="card-desc">Discover and evaluate the best AI models. Search, compare, and find the perfect models for your specific use cases.</p>
-        <div class="card-tags">
-            <span class="tag">Model Search</span>
-            <span class="tag">HuggingFace</span>
-            <span class="tag">Benchmarks</span>
-            <span class="tag">Discovery</span>
-        </div>
+        <p class="card-desc">Discover and compare the best AI models for your use case.</p>
         <div class="card-footer">
-            <div class="card-stats">🎯 Model Discovery</div>
-            <a href="https://ai-model-hunter.streamlit.app" target="_blank" class="card-btn btn-amber">Launch →</a>
+            <span class="tag">Discovery</span>
+            <a href="https://ai-model-hunter.streamlit.app" target="_blank" class="launch-link">Launch ↗</a>
         </div>
     </div>
     """, unsafe_allow_html=True)
+
+# Column 4
+with col4:
+    st.markdown("""
+    <div class="academy-card">
+        <div class="card-top">
+            <div class="card-icon icon-purple">👩‍🏫</div>
+            <div class="card-title">Coach Sushma</div>
+        </div>
+        <p class="card-desc">Your personal AI coach for career growth and interview prep.</p>
+        <div class="card-footer">
+            <span class="tag">Career</span>
+            <a href="https://coach-sushma.streamlit.app" target="_blank" class="launch-link">Launch ↗</a>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("<div style='height: 15px'></div>", unsafe_allow_html=True)
 
     st.markdown("""
     <div class="academy-card">
-        <div class="card-accent accent-blue"></div>
-        <div class="card-header">
+        <div class="card-top">
             <div class="card-icon icon-blue">🌐</div>
-            <div class="card-title-area">
-                <div class="card-category cat-blue">Tools</div>
-                <div class="card-title">Website AI Agent</div>
-            </div>
+            <div class="card-title">Website AI Agent</div>
         </div>
-        <p class="card-desc">Intelligent web agent for content extraction and analysis. Scrape, summarize, and interact with web content using AI.</p>
-        <div class="card-tags">
-            <span class="tag">Web Scraping</span>
-            <span class="tag">Content Analysis</span>
-            <span class="tag">Automation</span>
-            <span class="tag">Agent</span>
-        </div>
+        <p class="card-desc">Intelligent agent for web scraping and content analysis.</p>
         <div class="card-footer">
-            <div class="card-stats">🤖 Web Intelligence</div>
-            <a href="https://website-ai-agent.streamlit.app" target="_blank" class="card-btn btn-blue">Launch →</a>
+            <span class="tag">Agent</span>
+            <a href="https://website-ai-agent.streamlit.app" target="_blank" class="launch-link">Launch ↗</a>
         </div>
     </div>
     """, unsafe_allow_html=True)
 
-# Quick Access
-st.markdown("""
-<div class="section-header">
-    <div class="section-label">Jump Right In</div>
-    <div class="section-title">Quick Access</div>
-</div>
-<div class="quick-grid">
-    <a href="https://python-mastery.streamlit.app/Beginner" target="_blank" class="quick-card">
-        <span class="quick-icon">🎯</span>
-        <div class="quick-title">Start Python</div>
-        <div class="quick-sub">Beginner Module</div>
-    </a>
-    <a href="https://automation-testing-academy.streamlit.app" target="_blank" class="quick-card">
-        <span class="quick-icon">🧪</span>
-        <div class="quick-title">API Testing</div>
-        <div class="quick-sub">REST & GraphQL</div>
-    </a>
-    <a href="https://performance-testing.streamlit.app" target="_blank" class="quick-card">
-        <span class="quick-icon">📊</span>
-        <div class="quick-title">Load Testing</div>
-        <div class="quick-sub">JMeter & k6</div>
-    </a>
-    <a href="https://learn-artificial-intelligence.streamlit.app" target="_blank" class="quick-card">
-        <span class="quick-icon">🧠</span>
-        <div class="quick-title">AI & ML</div>
-        <div class="quick-sub">Neural Networks</div>
-    </a>
-</div>
-""", unsafe_allow_html=True)
-
-# CTA
-st.markdown("""
-<div class="cta-box">
-    <div class="cta-title">🚀 Ready to Level Up?</div>
-    <p class="cta-text">Start your learning journey today. All academies are free and continuously updated.</p>
-    <a href="https://python-mastery.streamlit.app" target="_blank" class="cta-btn">Begin with Python →</a>
-</div>
-""", unsafe_allow_html=True)
-
-# Footer
+# Compact Footer
 current_year = datetime.now().year
 st.markdown(f"""
-<div class="footer">
-    <div class="footer-brand">Learning Command Hub</div>
-    <p class="footer-text">
-        © {current_year} All rights reserved. Created with ❤️ by 
-        <a href="mailto:vikas.singh.info@gmail.com" class="footer-link">vikas.singh.info@gmail.com</a>
-    </p>
+<div class="footer-compact">
+    © {current_year} Learning Command Hub • <a href="mailto:vikas.singh.info@gmail.com" style="color: #94a3b8; text-decoration: none;">Contact Support</a>
 </div>
 """, unsafe_allow_html=True)
