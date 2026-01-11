@@ -1,34 +1,39 @@
-# Learning Command Hub 🚀
+# Unified Learning Hub 🚀
 
-> **Your Personal Self-Development Dashboard** — One portal to access all your learning academies
+> **Your World-Class Learning Portal** — A professional hub to showcase and navigate all your Streamlit applications.
 
 [![Streamlit](https://img.shields.io/badge/Built%20with-Streamlit-FF4B4B.svg)](https://streamlit.io/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ## 🎯 Overview
 
-Learning Command Hub is a centralized dashboard that provides quick access to all your learning platforms. It features a stunning dark mode design with glassmorphism effects.
+The **Unified Learning Hub** is a visually stunning, highly interactive portal designed to centralize all your learning resources and applications. Built with a "Dark Mode First" philosophy and modern Glassmorphism aesthetics, it serves as both a navigation center and a showcase of your work.
 
-**Live Demo:** [https://learning-command-hub.streamlit.app](https://learning-command-hub.streamlit.app)
+## ✨ Key Features
 
-## 📚 Connected Academies
+- **🎨 Modern Design**: Professional dark theme, glassmorphism, and smooth animations.
+- **🔍 Smart Search & Filtering**: Real-time search by name, tag, or description. Filter by category, difficulty, or sort by various metrics.
+- **📱 Responsive Layout**: Adaptive grid system that looks great on all devices.
+- **⚡ Performance Optimized**: Fast loading with caching and optimized assets.
+- **ℹ️ Rich App Details**: Detailed modals with descriptions, tech stacks, and usage guides.
 
-| Academy | Focus Area | Link |
-|---------|------------|------|
-| 🐍 **Python Mastery** | Python, AI/ML, PyTorch, NumPy | [Launch](https://python-mastery.streamlit.app) |
-| ⚡ **Performance Testing** | JMeter, k6, Gatling, Locust | [Launch](https://performance-testing.streamlit.app) |
-| 🤖 **Automation Testing** | Playwright, WebdriverIO, Karate | [Launch](https://automation-testing-academy.streamlit.app) |
-| 🧠 **Learn Artificial Intelligence** | AI/ML, Neural Networks, LLMs | [Launch](https://learn-artificial-intelligence.streamlit.app) |
+## 📚 App Collection
 
-## ✨ Features
-
-- 🎨 **Premium Dark Mode Design** — Glassmorphism with gradient accents
-- 🚀 **Quick Access Links** — Jump directly to popular sections
-- 📊 **Stats Overview** — Track your learning ecosystem
-- 💡 **Daily Motivation** — Inspirational quotes for learners
-- 📱 **Fully Responsive** — Works on all devices
+Access a wide range of apps including:
+- **Interactive Data Explorer** (Data Science)
+- **Python Mastery** (Education)
+- **Performance Testing** (Utilities)
+- **Automation Academy** (Education)
+- **Learn AI & ML** (ML/AI)
+- And many more!
 
 ## 🚀 Quick Start
+
+### Prerequisites
+- Python 3.8+
+- Streamlit 1.34+
+
+### Installation
 
 ```bash
 # Clone the repository
@@ -37,26 +42,44 @@ cd learning-hub
 
 # Install dependencies
 pip install -r requirements.txt
+```
 
-# Run locally
-streamlit run Home.py
+### Running Locally
+
+```bash
+streamlit run app.py
 ```
 
 ## 📁 Project Structure
 
 ```
-learning-hub/
-├── Home.py              # Main dashboard
-├── requirements.txt     # Dependencies
-└── README.md           # Documentation
+learning_hub/
+├── app.py                      # Main hub application
+├── config/
+│   └── apps_config.py         # App definitions and configuration
+├── components/
+│   ├── app_card.py           # App card component
+│   ├── filters.py            # Sidebar filters
+│   └── modal.py              # Details modal
+├── utils/
+│   ├── data_manager.py       # Data management utilities
+│   └── styling.py            # Custom CSS and styling
+├── assets/                   # Static assets (icons, thumbnails)
+└── apps/                      # Internal apps directory
 ```
 
-## 🌐 Deploy to Streamlit Cloud
+## 🛠️ Configuration
 
-1. Push this repository to GitHub
-2. Go to [share.streamlit.io](https://share.streamlit.io)
-3. Deploy from your repository
-4. Done! 🎉
+To add new apps, simply edit `config/apps_config.py`. Add a new dictionary entry to the `APPS` list with your app's details.
+
+```python
+{
+    "id": "my_new_app",
+    "name": "My New App",
+    "category": "Utilities",
+    ...
+}
+```
 
 ## 📄 License
 
