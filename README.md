@@ -47,14 +47,14 @@ pip install -r requirements.txt
 ### Running Locally
 
 ```bash
-streamlit run app.py
+streamlit run Home.py
 ```
 
 ## 📁 Project Structure
 
 ```
 learning_hub/
-├── app.py                      # Main hub application
+├── Home.py                      # Main hub application
 ├── config/
 │   └── apps_config.py         # App definitions and configuration
 ├── components/
