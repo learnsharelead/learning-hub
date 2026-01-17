@@ -18,33 +18,36 @@ APPS = [
     "https://booksbrief.streamlit.app/"
 ]
 
-def wake_app(url):
+def wake_app(url, max_retries=3):
     print(f"Pinging {url}...", end=" ", flush=True)
-    try:
-        # Use a real user-agent to avoid being blocked generally, 
-        # though Streamlit doesn't specifically block curl, it's safer.
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-        }
-        # Timeout set to 30s to allow spin-up time
-        response = requests.get(url, headers=headers, timeout=30)
-        
-        if response.status_code == 200:
-            print("✅ Awake (200 OK)")
-            return True
-        else:
-            print(f"⚠️ Status {response.status_code}")
-            return False
+    
+    for attempt in range(max_retries):
+        try:
+            # Use a real user-agent to mimic a browser
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+            }
+            # Increased timeout to 60s because sleeping apps take time to boot
+            response = requests.get(url, headers=headers, timeout=60)
             
-    except requests.exceptions.Timeout:
-        print("❌ Timeout (Is it sleeping too deeply?)")
-        return False
-    except requests.exceptions.ConnectionError:
-        print("❌ Connection Error")
-        return False
-    except Exception as e:
-        print(f"❌ Error: {e}")
-        return False
+            if response.status_code == 200:
+                print(f"✅ Awake (200 OK)")
+                return True
+            else:
+                print(f"⚠️ Status {response.status_code}", end="... ")
+                
+        except requests.exceptions.Timeout:
+            print(f"⏳ Timeout (Attempt {attempt+1}/{max_retries})", end="... ")
+        except requests.exceptions.ConnectionError:
+            print(f"❌ Connection Error (Attempt {attempt+1}/{max_retries})", end="... ")
+        except Exception as e:
+            print(f"❌ Error: {e}", end="... ")
+            
+        # Wait a bit before retrying
+        time.sleep(5)
+    
+    print("❌ Failed after retries.")
+    return False
 
 def main():
     print("--- Starting Keep-Alive Routine ---")
